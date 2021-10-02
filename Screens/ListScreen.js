@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import { StyleSheet,Button, View, Text, FlatList, Dimensions } from "react-native";
 
 const viewWidth = Dimensions.get('window').width*0.8;
@@ -15,9 +15,13 @@ export default function ListScreen({ navigation, route }){
         {num:5, key:'5'},
         {num:6, key:'6'},
     ])
-
+    
     return(
         <SafeAreaProvider>
+            <SafeAreaView>
+                <View style={styles.ads}></View>
+                <Button title="press" onPress={() => {navigation.navigate('DetailScreen')}}/>
+            </SafeAreaView>
             <FlatList
                 contentContainerStyle={{
                     alignItems:'center',
@@ -31,23 +35,20 @@ export default function ListScreen({ navigation, route }){
                     );
                 }}
             />
-            {/* <Button onPress={() => {navigation.navigate('DetailScreen')}}>
-                List
-            </Button> */}
         </SafeAreaProvider>
     );
 }
 
 const styles = StyleSheet.create({
-    screen: {
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
     container:{
         height: viewHeight,
         width:viewWidth,
         backgroundColor: 'pink',
         marginTop:viewHeight*0.1
+    },
+    ads:{
+        height: viewHeight*0.3,
+        borderBottomColor:'lightblue',
+        borderBottomWidth: 2
     }
 });

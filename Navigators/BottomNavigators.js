@@ -13,9 +13,13 @@ const Stack = createStackNavigator()
 
 function Home(){
   return (
-    <Stack.Navigator>
-      <Stack.Screen name='ListScreen' component={ListScreen} options={{headerTitle:''}}/>
-      <Stack.Screen name='DetailScreen' component={DetailScreen} options={{headerTitle:''}}/>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown:false
+      }}
+    >
+      <Stack.Screen name='ListScreen' component={ListScreen} />
+      <Stack.Screen name='DetailScreen' component={DetailScreen}/>
     </Stack.Navigator>
     );
   }
