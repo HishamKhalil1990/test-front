@@ -1,38 +1,58 @@
 import React from 'react';
 import { NavigationContainer} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { FontAwesome5, Ionicons, MaterialIcons, Fontisto } from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
-import { Text } from 'react-native';
-import List from '../Screens/List';
-import Buy from '../Screens/Buy';
+import ListScreen from '../Screens/ListScreen';
+import DetailScreen from '../Screens/DetailsScreen';
+import BasketScreen from '../Screens/BasketScreen';
+import CupScreen from '../Screens/CupScreen';
+import SmileScreen from '../Screens/SmileScreen';
 
 const Stack = createStackNavigator()
 
 function Home(){
   return (
     <Stack.Navigator>
-      <Stack.Screen name='List' component={List}/>
-      <Stack.Screen name='Buy' component={Buy}/>
+      <Stack.Screen name='ListScreen' component={ListScreen} options={{headerTitle:''}}/>
+      <Stack.Screen name='DetailScreen' component={DetailScreen} options={{headerTitle:''}}/>
     </Stack.Navigator>
     );
   }
 
 function Basket(){
   return (
-    <Text>Home</Text>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown:false
+      }}
+    >
+      <Stack.Screen name='BasketScreen' component={BasketScreen}/>
+    </Stack.Navigator>
     );
   }
 
 function Cup(){
   return (
-    <Text>Home</Text>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown:false
+      }}
+    >
+      <Stack.Screen name='CupScreen' component={CupScreen}/>
+    </Stack.Navigator>
   );
 }
 
 function Smile(){
   return (
-    <Text>Home</Text>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown:false
+      }}
+    >
+      <Stack.Screen name='SmileScreen' component={SmileScreen}/>
+    </Stack.Navigator>
   );
 }
 
@@ -53,7 +73,7 @@ function MyTabs() {
           options={{
             tabBarLabel : '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="home" color={color} size={size} />
+              <MaterialIcons name="filter-list" color={color} size={size} />
             ),
           }}
         />
@@ -63,7 +83,7 @@ function MyTabs() {
           options={{
             tabBarLabel : '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="bell" color={color} size={size} />
+              <Fontisto name="shopping-basket" color={color} size={size} />
             )
           }}
         />
@@ -73,7 +93,7 @@ function MyTabs() {
           options={{
             tabBarLabel : '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="account" color={color} size={size} />
+              <FontAwesome5 name="award" color={color} size={size} />
             ),
           }}
         />
@@ -83,7 +103,7 @@ function MyTabs() {
           options={{
             tabBarLabel : '',
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="account" color={color} size={size} />
+              <Ionicons name="happy" color={color} size={size}/>
             ),
           }}
         />
