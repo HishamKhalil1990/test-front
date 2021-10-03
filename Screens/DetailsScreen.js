@@ -10,7 +10,7 @@ const viewHeight = Dimensions.get('window').height*0.35;
 export default function DetailScreen({navigation}){
     return(
         <SafeAreaProvider>
-            <SafeAreaView style={{height:'100%', backgroundColor:'pink'}}>
+            <SafeAreaView style={{height:'100%'}}>
                 <View style={styles.ads}></View>
                 <View style={styles.imgView}>
                     <TouchableOpacity
@@ -30,11 +30,12 @@ const styles = StyleSheet.create({
     ads:{
         height: viewHeight*0.3,
         borderBottomColor:'lightblue',
-        borderBottomWidth: 2
+        borderBottomWidth: 2,
+        backgroundColor:'pink'
     },
     button: {
         margin: 25,
-        marginRight:viewWidth,
+        width:20
     },
     imgView:{
         height:'45%',
