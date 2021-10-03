@@ -1,15 +1,15 @@
 import React from "react";
 import { Text, StyleSheet, View } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export default function SmileScreen(){
     return(
         <SafeAreaProvider>
-            <View style={styles.screen}>
+            <SafeAreaView style={styles.screen}>
                 <Text>
                     Smile Screen
                 </Text>
-            </View>
+            </SafeAreaView>
         </SafeAreaProvider>
     );
 }
