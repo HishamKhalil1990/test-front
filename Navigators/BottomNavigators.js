@@ -11,15 +11,15 @@ import SmileScreen from '../Screens/SmileScreen';
 
 const Stack = createStackNavigator()
 
-function Home(){
+function Home({product}){
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown:false
       }}
     >
-      <Stack.Screen name='ListScreen' component={ListScreen} />
-      <Stack.Screen name='DetailScreen' component={DetailScreen}/>
+      <Stack.Screen name='ListScreen' children={()=><ListScreen product={product}/>} />
+      <Stack.Screen name='DetailScreen' children={()=><DetailScreen product={product}/>}/>
     </Stack.Navigator>
     );
   }
@@ -62,7 +62,7 @@ function Smile(){
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+function MyTabs({product}) {
   return (
     <Tab.Navigator
         initialRouteName="Home"
@@ -73,7 +73,7 @@ function MyTabs() {
       >
         <Tab.Screen
           name="Home"
-          component={Home}
+          children={()=><Home product={product}/>}
           options={{
             tabBarLabel : '',
             tabBarIcon: ({ color, size }) => (
@@ -115,10 +115,10 @@ function MyTabs() {
     );
 }
 
-export default function BottomNavigators(){
+export default function BottomNavigators({ product }){
     return(
         <NavigationContainer>
-            <MyTabs/>
+            <MyTabs product={product}/>
         </NavigationContainer>
     )
 }

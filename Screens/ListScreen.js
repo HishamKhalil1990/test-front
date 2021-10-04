@@ -8,19 +8,11 @@ import CardThree from "../Components/CardThree";
 const viewWidth = Dimensions.get('window').width*0.9;
 const viewHeight = Dimensions.get('window').height*0.35;
 
-export default function ListScreen({ navigation, route }){
-
-    const [product, setProduct] = useState([
-        {num:1, key:'1', card:1},
-        {num:2, key:'2', card:2},
-        {num:3, key:'3', card:3},
-        {num:4, key:'4', card:2},
-        {num:5, key:'5', card:3},
-        {num:6, key:'6', card:1},
-    ])
+export default function ListScreen({ navigation, route, product }){
     
     return(
         <SafeAreaProvider>
+            {console.log(product)}
             <SafeAreaView>
                 <View style={styles.ads}></View>
                 <Button title="press" onPress={() => {navigation.navigate('DetailScreen')}}/>
