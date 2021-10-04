@@ -33,7 +33,7 @@ export default function ListScreen({ navigation, route }){
                 renderItem={({item}) => {
                     return (
                         <View style={styles.container}>
-                            {item.card == 1? <CardOne/> : item.card == 2? <CardTwo/> : <CardThree/>}
+                            {item.card == 1? <CardOne circleDia={viewHeight}/> : item.card == 2? <CardTwo/> : <CardThree/>}
                         </View>
                     );
                 }}

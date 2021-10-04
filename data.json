@@ -1,0 +1,10 @@
+{
+    "data":[
+        {
+            "cardOne":{
+                "shoes":"../img/nike1.png",
+                "logo":"'../img/nike-logo.png'"
+            }
+        }
+    ]
+}
