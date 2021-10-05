@@ -12,6 +12,30 @@
                 "endDate":"",
                 "tabColor":"#6ECB63",
                 "buttonColor":"#B1E693"
+            },
+            "cardTwo":{
+                "id":"2", 
+                "card":2,
+                "cardBackgroundImage":"",
+                "tabColor":"#6ECB63",
+                "buttonColor":"#B1E693",
+                "title":"Answer and Win",
+                "prize":"100",
+                "currency":"KD"
+            },
+            "cardThree":{
+                "id":"3", 
+                "card":3,
+                "cardBackgroundImage":"",
+                "tabColor":"#6ECB63",
+                "buttonColor":"#B1E693",
+                "title":"Answer and Win"
+            },
+            "cardFour":{
+                "id":"4", 
+                "card":4,
+                "cardBackgroundImage":"",
+                "buttonColor":"#B1E693"
             }
         }
     ]

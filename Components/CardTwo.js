@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, ImageBackground } from "react-native";
-import ViewOne from "./ViewOne";
 import ViewTwo from "./ViewTwo";
 import ViewThree from "./ViewThree";
 
@@ -9,7 +8,7 @@ export default function CardOne({cardDim,item,screen}){
         <ImageBackground style={styles.container}
             // source={{uri:cardBackgroundImage}} // should be get from data.json
         >
-            <ViewThree  item={item} cardDim={cardDim} screen={screen}/>
+            <ViewThree  item={item} cardDim={cardDim}/>
             <ViewTwo  item={item} cardDim={cardDim} screen={screen}/>
         </ImageBackground>
     );

@@ -24,7 +24,7 @@ export default function ListScreen({route}){
                 renderItem={({item}) => {
                     return (
                         <View style={styles.container}>
-                            {item.card == 1? <CardOne cardDim={viewHeight} item={item} screen={1}/> : item.card == 2? <CardTwo cardDim={viewHeight} item={item}/> : <CardThree cardDim={viewHeight} item={item}/>}
+                            {item.card == 1? <CardOne cardDim={viewHeight} item={item} screen={1}/> : item.card == 2 || item.card == 3? <CardTwo cardDim={viewHeight} item={item}/> : <CardThree cardDim={viewHeight} item={item}/>}
                         </View>
                     );
                 }}

@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
-import { View, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
+import { View, StyleSheet, Dimensions, TouchableOpacity,ImageBackground } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons'
 import ViewOne from "../Components/ViewOne";
 
@@ -13,7 +13,9 @@ export default function DetailScreen({navigation,route}){
         <SafeAreaProvider>
             <SafeAreaView style={{height:'100%'}}>
                 <View style={styles.ads}></View>
-                <View style={styles.imgView}>
+                <ImageBackground style={styles.imgView}
+                    // source={{uri:cardBackgroundImage}} // should be get from data.json
+                >
                     <View style={styles.backButtonView}>
                         <TouchableOpacity
                             activeOpacity='0'
@@ -26,7 +28,7 @@ export default function DetailScreen({navigation,route}){
                     <View style={{height:hieght}}>
                         <ViewOne item={route.params.item} cardDim={hieght} screen={route.params.screen}/>
                     </View>
-                </View>
+                </ImageBackground>
             </SafeAreaView>
         </SafeAreaProvider>
     );
@@ -37,7 +39,6 @@ const styles = StyleSheet.create({
         height: viewHeight*0.3,
         borderBottomColor:'lightblue',
         borderBottomWidth: 2,
-        backgroundColor:'pink'
     },
     button: {
         margin: 25,
@@ -51,7 +52,6 @@ const styles = StyleSheet.create({
     },
     backButtonView:{
         height:hieght*0.3,
-        backgroundColor:'pink'
     }
 
 });

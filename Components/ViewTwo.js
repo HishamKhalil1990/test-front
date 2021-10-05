@@ -25,14 +25,20 @@ function goToDetails(){
                         <View style={[{marginLeft:cardDim*0.7*0.1},styles.downRightContainer]}>
                             <View style={styles.downRightInsideView}>
                                 <Text style={styles.priceText1}>{item.price*0.8} {item.currency}</Text>
-                                    <Text style={styles.priceText2}>{item.price} {item.currency}</Text>
+                                <Text style={styles.priceText2}>{item.price} {item.currency}</Text>
                             </View>
                             <View style={styles.downRightInsideView}>
                                 <Text style={styles.priceText3}>42:55:59</Text>
                             </View>
                         </View>
                         :
-                        <View View style={[{marginLeft:cardDim*0.7*0.1}]}></View>
+                        <View View style={[{marginLeft:cardDim*0.7*0.1},{height:"100%",width:"100%"}]}>
+                            <View style={styles.textView}>
+                                <Text style={styles.priceText1}>
+                                    {item.title}
+                                </Text>
+                            </View>
+                        </View>
                     }
 
                 </View>
@@ -70,12 +76,10 @@ const styles = StyleSheet.create({
     downRightView:{
         height:'100%',
         width:'65%',
-        borderBottomLeftRadius:35,
     },
     downLeftView:{
         height:'100%',
         width:'35%',
-        borderBottomRightRadius:35,
         justifyContent:'center',
         alignItems:'flex-start'
     },
@@ -105,5 +109,10 @@ const styles = StyleSheet.create({
         height:'40%',
         width:'90%',
         borderRadius:30,
+    },
+    textView:{
+        height:'100%',
+        width:'100%',
+        justifyContent:'center',
     }
 })
