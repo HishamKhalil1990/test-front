@@ -8,11 +8,10 @@ import CardThree from "../Components/CardThree";
 const viewWidth = Dimensions.get('window').width*0.9;
 const viewHeight = Dimensions.get('window').height*0.35;
 
-export default function ListScreen({ navigation, route, product }){
+export default function ListScreen({ navigation, route}){
     
     return(
         <SafeAreaProvider>
-            {console.log(product)}
             <SafeAreaView>
                 <View style={styles.ads}></View>
                 <Button title="press" onPress={() => {navigation.navigate('DetailScreen')}}/>
@@ -21,11 +20,11 @@ export default function ListScreen({ navigation, route, product }){
                 contentContainerStyle={{
                     alignItems:'center',
                 }}
-                data={product}
+                data={route.params.product}
                 renderItem={({item}) => {
                     return (
                         <View style={styles.container}>
-                            {item.card == 1? <CardOne circleDia={viewHeight}/> : item.card == 2? <CardTwo/> : <CardThree/>}
+                            {item.card == 1? <CardOne cardDim={viewHeight} item={item}/> : item.card == 2? <CardTwo/> : <CardThree/>}
                         </View>
                     );
                 }}

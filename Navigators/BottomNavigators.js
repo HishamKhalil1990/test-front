@@ -18,8 +18,8 @@ function Home({product}){
         headerShown:false
       }}
     >
-      <Stack.Screen name='ListScreen' children={()=><ListScreen product={product}/>} />
-      <Stack.Screen name='DetailScreen' children={()=><DetailScreen product={product}/>}/>
+      <Stack.Screen name='ListScreen' component={ListScreen} initialParams={{product}}/>
+      <Stack.Screen name='DetailScreen' component={DetailScreen}/>
     </Stack.Navigator>
     );
   }
