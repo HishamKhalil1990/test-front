@@ -1,11 +1,17 @@
-import React, { useState } from "react";
-import { StyleSheet,Button, View, Text } from "react-native";
+import React from "react";
+import { StyleSheet, ImageBackground } from "react-native";
+import ViewOne from "./ViewOne";
+import ViewTwo from "./ViewTwo";
+import ViewThree from "./ViewThree";
 
-export default function CardTwo(){
+export default function CardOne({cardDim,item,screen}){
     return(
-        <View style={styles.container}>
-
-        </View>
+        <ImageBackground style={styles.container}
+            // source={{uri:cardBackgroundImage}} // should be get from data.json
+        >
+            <ViewThree  item={item} cardDim={cardDim} screen={screen}/>
+            <ViewTwo  item={item} cardDim={cardDim} screen={screen}/>
+        </ImageBackground>
     );
 } 
 
@@ -14,6 +20,8 @@ const styles = StyleSheet.create({
         height:'100%',
         width:'100%',
         borderRadius:35,
-        backgroundColor:'blue'
-    }
+        flexDirection:'column',
+        justifyContent:'center',
+        backgroundColor:'pink'
+    },
 })

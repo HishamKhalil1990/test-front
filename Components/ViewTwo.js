@@ -7,10 +7,12 @@ export default function ViewTwo({item,cardDim}){
     
 function goToDetails(){
 
-        navigation.navigate('DetailScreen',{
-            item,
-            screen:2,
-        })
+        if (item.card==1){
+            navigation.navigate('DetailScreen',{
+                item,
+                screen:2,
+            });
+        }
     }
 
     const navigation = useNavigation()
