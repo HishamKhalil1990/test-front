@@ -5,12 +5,12 @@ import BottomNavigators from './Navigators/BottomNavigators';
 export default function App() {
   
   const [product, setProduct] = useState([
-    {num:1, key:'1', card:1},
-    {num:2, key:'2', card:2},
-    {num:3, key:'3', card:3},
-    {num:4, key:'4', card:2},
-    {num:5, key:'5', card:3},
-    {num:6, key:'6', card:1},
+    {id:'1', card:1,cardBackgroundImage:'',itemImg:"https://i.ibb.co/CMRLVHb/nike1.png",companyLogo:"https://i.ibb.co/WDVLfJm/nike-logo.png",salePercent:20,price:70.60,currency:"KD",endDate:"",tabColor:"#6ECB63",buttonColor:"#B1E693"},
+    {id:'2', card:2},
+    {id:'3', card:3},
+    {id:'4', card:2},
+    {id:'5', card:3},
+    {id:'6', card:1,cardBackgroundImage:'',itemImg:"https://i.ibb.co/CMRLVHb/nike1.png",companyLogo:"https://i.ibb.co/WDVLfJm/nike-logo.png",salePercent:20,price:70.60,currency:"KD",endDate:"",tabColor:"#6ECB63",buttonColor:"#B1E693"},
   ])
   
   return (
