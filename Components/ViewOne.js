@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 
 export default function ViewOne({item,cardDim,screen}){
+
     return(
         <View style={styles.container}>
             <View style={styles.upView}>

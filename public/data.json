@@ -9,9 +9,11 @@
                 "salePercent":20,
                 "price":70.60,
                 "currency":"KD",
-                "endDate":"",
+                "endDate":"25/12/2021",
+                "endTime":"13:15:00",
                 "tabColor":"#6ECB63",
-                "buttonColor":"#B1E693"
+                "buttonColor":"#B1E693",
+                "timer":{}
             },
             {
                 "id":"2", 
@@ -36,6 +38,21 @@
                 "card":4,
                 "cardBackgroundImage":"",
                 "buttonColor":"#B1E693"
+            },
+            {
+                "id":"5",
+                "card":1,
+                "cardBackgroundImage":"",
+                "itemImg":"https://i.ibb.co/CMRLVHb/nike1.png",
+                "companyLogo":"https://i.ibb.co/WDVLfJm/nike-logo.png",
+                "salePercent":20,
+                "price":70.60,
+                "currency":"KD",
+                "endDate":"17/10/2021",
+                "endTime":"16:45:00",
+                "tabColor":"#6ECB63",
+                "buttonColor":"#B1E693",
+                "timer":{}
             }
     ]
 }

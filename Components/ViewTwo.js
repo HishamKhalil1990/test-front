@@ -1,11 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { StyleSheet,TouchableOpacity, View, Text } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-
+import countDownClock from "./Clock";
 
 export default function ViewTwo({item,cardDim}){
+
+    const [time,setTime] = useState('')
+    const [redo,setRedo] = useState(false)
+
+    useEffect(()=>{
+        if (item.card == 1){
+            const itemTime = countDownClock(item.endDate,item.endTime)
+        setTime(itemTime.timing2)
+        console.log(time)
+        }
+    },[])
     
-function goToDetails(){
+    function goToDetails(){
 
         if (item.card==1){
             navigation.navigate('DetailScreen',{
@@ -28,7 +39,7 @@ function goToDetails(){
                                 <Text style={styles.priceText2}>{item.price} {item.currency}</Text>
                             </View>
                             <View style={styles.downRightInsideView}>
-                                <Text style={styles.priceText3}>42:55:59</Text>
+                                <Text style={styles.priceText3}>{time}</Text>
                             </View>
                         </View>
                         :
