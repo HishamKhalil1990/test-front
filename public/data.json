@@ -13,7 +13,7 @@
                 "endTime":"13:15:00",
                 "tabColor":"#6ECB63",
                 "buttonColor":"#B1E693",
-                "timer":{}
+                "pcs":22
             },
             {
                 "id":"2", 
@@ -52,7 +52,7 @@
                 "endTime":"16:45:00",
                 "tabColor":"#6ECB63",
                 "buttonColor":"#B1E693",
-                "timer":{}
+                "pcs":36
             }
     ]
 }

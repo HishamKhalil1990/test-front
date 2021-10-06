@@ -6,13 +6,11 @@ import countDownClock from "./Clock";
 export default function ViewTwo({item,cardDim}){
 
     const [time,setTime] = useState('')
-    const [redo,setRedo] = useState(false)
 
     useEffect(()=>{
         if (item.card == 1){
             const itemTime = countDownClock(item.endDate,item.endTime)
         setTime(itemTime.timing2)
-        console.log(time)
         }
     },[])
     

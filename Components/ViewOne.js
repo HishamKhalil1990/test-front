@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         width:'40%'
     },
     urw2:{
-        width:'55%'
+        width:'50%'
     },
     upLeftView:{
         height:'100%',
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         width:'60%'
     },
     ulw2:{
-        width:'45%'
+        width:'50%'
     },
     textView:{
         height:'40%',
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         fontSize:30
     },
     text3:{
-        fontSize:15,
+        fontSize:10,
         textAlign:'center'
     },
 })
