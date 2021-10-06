@@ -1,21 +1,123 @@
 import 'react-native-gesture-handler'
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import BottomNavigators from './Navigators/BottomNavigators';
+import getData from './FetchingAPIs/APIs';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
+
+  const [logged,setLogged] = useState(false)
+  const [source,setSource] = useState('');
+  const [fetched,setFetched] = useState(false)
+  const [product, setProduct] = useState([])
   
-  const [product, setProduct] = useState([
-    {id:'1', card:1,cardBackgroundImage:'',itemImg:"https://i.ibb.co/CMRLVHb/nike1.png",companyLogo:"https://i.ibb.co/WDVLfJm/nike-logo.png",salePercent:20,price:70.60,currency:"KD",endDate:"",tabColor:"#6ECB63",buttonColor:"#B1E693"},
-    {id:'2', card:2,cardBackgroundImage:'',tabColor:"#6ECB63",buttonColor:"#B1E693",title:'Answer and Win',prize:'100',currency:"KD"},
-    {id:'3', card:3,cardBackgroundImage:'',tabColor:"#6ECB63",buttonColor:"#B1E693",title:'Title'},
-    {id:'3', card:4,cardBackgroundImage:'',buttonColor:"#B1E693"},
-    {id:'4', card:2,cardBackgroundImage:'',tabColor:"#6ECB63",buttonColor:"#B1E693",title:'Answer and Win',prize:'100',currency:"KD"},
-    {id:'3', card:4,cardBackgroundImage:'',buttonColor:"#B1E693"},
-    {id:'5', card:3,cardBackgroundImage:'',tabColor:"#6ECB63",buttonColor:"#B1E693",title:'Title'},
-    {id:'6', card:1,cardBackgroundImage:'',itemImg:"https://i.ibb.co/CMRLVHb/nike1.png",companyLogo:"https://i.ibb.co/WDVLfJm/nike-logo.png",salePercent:20,price:70.60,currency:"KD",endDate:"",tabColor:"#6ECB63",buttonColor:"#B1E693"},
-  ])
-  
+  useEffect(() => {
+
+    async function status(data){
+      if (data != undefined){
+        setProduct(data.data)
+        setFetched(true)
+      }
+      return true
+    }
+
+    async function fetchData(){
+      const data = await getData(source)
+      const fetchStatus = await status(data)
+        
+      }
+    
+    fetchData()
+
+  },[logged])
+
   return (
-    <BottomNavigators product={product}/>
+    <SafeAreaProvider>
+      {logged?
+        <View style={styles.containerOne}>
+          {fetched?
+          <BottomNavigators product={product}/>
+          :
+          <View style={[styles.containerOne,styles.containerTwo]}>
+            <View style={styles.view}>
+              <Text style={styles.text}>waitting data</Text>
+            </View>
+          </View>
+        }
+        </View>
+      :
+        <View style={[styles.containerOne,styles.containerTwo]}>
+          <View style={styles.view}>
+            <Text style={styles.text}>Please choose the Type of {"\n"} fetching data</Text>
+          </View>
+          <View style={styles.view2}>
+            <TouchableOpacity 
+              style={styles.btu}
+              onPress={()=>{setSource('local'),setLogged(true)}}
+            >
+              <Text style={styles.text2}>
+                Local Data
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity 
+              style={styles.btu}
+              onPress={()=>{setSource('API'),setLogged(true)}}
+            >
+              <Text style={styles.text2}>
+                Using APIs
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      }
+    </SafeAreaProvider>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  containerOne:{
+    height:'100%',
+    width:'100%'
+  },
+  containerTwo:{
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  view:{
+    height:'30%',
+    width:'65%',
+    backgroundColor:'lightblue',
+    borderRadius:35,
+    justifyContent:'center',
+    alignItems:'center',
+    marginBottom:20
+  },
+  text:{
+    fontSize:20,
+    fontWeight:'bold',
+    color:'#fff',
+    textAlign:'center'
+  },
+  view2:{
+    height:'30%',
+    width:'90%',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center',
+    marginTop:20
+  },
+  btu:{
+    height:'20%',
+    width:'45%',
+    backgroundColor:"#6ECB63",
+    borderRadius:10,
+    justifyContent:'center',
+    alignItems:'center',
+  },
+  text2:{
+    color:"#fff",
+    fontSize:20,
+    fontWeight:'bold'
+  }
+})

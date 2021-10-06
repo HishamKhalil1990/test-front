@@ -6,7 +6,7 @@ import ViewThree from "./ViewThree";
 export default function CardOne({cardDim,item,screen}){
     return(
         <ImageBackground style={styles.container}
-            // source={{uri:cardBackgroundImage}} // should be get from data.json
+            source={{uri:item.cardBackgroundImage}} // should be get from data.json
         >
             <ViewThree  item={item} cardDim={cardDim}/>
             <ViewTwo  item={item} cardDim={cardDim} screen={screen}/>

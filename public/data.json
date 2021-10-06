@@ -1,8 +1,8 @@
 {
     "data":[
-        {
-            "cardOne":{
-                "id":1,
+            {
+                "id":"1",
+                "card":1,
                 "cardBackgroundImage":"",
                 "itemImg":"https://i.ibb.co/CMRLVHb/nike1.png",
                 "companyLogo":"https://i.ibb.co/WDVLfJm/nike-logo.png",
@@ -13,7 +13,7 @@
                 "tabColor":"#6ECB63",
                 "buttonColor":"#B1E693"
             },
-            "cardTwo":{
+            {
                 "id":"2", 
                 "card":2,
                 "cardBackgroundImage":"",
@@ -23,7 +23,7 @@
                 "prize":"100",
                 "currency":"KD"
             },
-            "cardThree":{
+            {
                 "id":"3", 
                 "card":3,
                 "cardBackgroundImage":"",
@@ -31,12 +31,11 @@
                 "buttonColor":"#B1E693",
                 "title":"Answer and Win"
             },
-            "cardFour":{
+            {
                 "id":"4", 
                 "card":4,
                 "cardBackgroundImage":"",
                 "buttonColor":"#B1E693"
             }
-        }
     ]
 }

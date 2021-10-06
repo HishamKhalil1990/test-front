@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity, ImageBackground,Text } from "react-native
 export default function CardThree({cardDim,item}){
     return(
         <ImageBackground style={styles.container}
-            // source={{uri:cardBackgroundImage}} // should be get from data.json
+            source={{uri:item.cardBackgroundImage}} // should be get from data.json
         >
             <TouchableOpacity
                 style={[styles.button,{marginBottom:cardDim*0.7*0.1,borderRadius:cardDim*0.7*0.2,backgroundColor:item.buttonColor}]}
