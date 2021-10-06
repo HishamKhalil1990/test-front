@@ -18,8 +18,8 @@ export default function ViewOne({item,cardDim,screen}){
                         />
                     </View>
                     <View style={{height:cardDim*0.7*0.3,width:'100%',justifyContent:'center',flexDirection:'column',marginLeft:cardDim*0.7*0.1}}>
-                        <View style={styles.textView}>
-                            <Text style={styles.text1}>FLASH SALE</Text>
+                        <View style={screen==1? styles.textView : styles.textView2}>
+                            <Text style={screen==1?styles.text1:styles.text3}>FLASH SALE</Text>
                         </View>
                         <Text style={styles.text2}>{item.salePercent}% OFF </Text>
                     </View>
@@ -77,11 +77,24 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center'
     },
+    textView2:{
+        height:'40%',
+        width:'40%',
+        backgroundColor:'#fff',
+        borderRadius:5,
+        justifyContent:'center',
+        alignItems:'center'
+    },
     text1:{
         fontSize:10,
         textAlign:'center'
     },
     text2:{
         fontWeight:'bold',
-    }
+        fontSize:30
+    },
+    text3:{
+        fontSize:15,
+        textAlign:'center'
+    },
 })

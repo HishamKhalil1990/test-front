@@ -39,15 +39,15 @@ export default function App() {
           {fetched?
           <BottomNavigators product={product}/>
           :
-          <View style={[styles.containerOne,styles.containerTwo]}>
+          <View style={[styles.containerOne,styles.containerTwo,{backgroundColor:'#6D9886'}]}>
             <View style={styles.view}>
-              <Text style={styles.text}>waitting data</Text>
+              <Text style={styles.text}>waitting for data</Text>
             </View>
           </View>
         }
         </View>
       :
-        <View style={[styles.containerOne,styles.containerTwo]}>
+        <View style={[styles.containerOne,styles.containerTwo,{backgroundColor:'#6D9886'}]}>
           <View style={styles.view}>
             <Text style={styles.text}>Please choose the Type of {"\n"} fetching data</Text>
           </View>
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   view:{
     height:'30%',
     width:'65%',
-    backgroundColor:'lightblue',
+    backgroundColor:'#D9CAB3',
     borderRadius:35,
     justifyContent:'center',
     alignItems:'center',
@@ -110,13 +110,13 @@ const styles = StyleSheet.create({
   btu:{
     height:'20%',
     width:'45%',
-    backgroundColor:"#6ECB63",
+    backgroundColor:"#F6F6F6",
     borderRadius:10,
     justifyContent:'center',
     alignItems:'center',
   },
   text2:{
-    color:"#fff",
+    color:"#212121",
     fontSize:20,
     fontWeight:'bold'
   }

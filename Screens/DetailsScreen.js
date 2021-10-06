@@ -14,7 +14,7 @@ export default function DetailScreen({navigation,route}){
             <SafeAreaView style={{height:'100%'}}>
                 <View style={styles.ads}></View>
                 <ImageBackground style={styles.imgView}
-                    // source={{uri:cardBackgroundImage}} // should be get from data.json
+                    source={{uri:route.params.item.cardBackgroundImage}} // should be get from data.json
                 >
                     <View style={styles.backButtonView}>
                         <TouchableOpacity
