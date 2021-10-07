@@ -27,7 +27,7 @@ export default function DetailScreen({navigation,route}){
                     </TouchableOpacity>
                 </View>
                 <ImageBackground style={styles.imgView}
-                    source={{uri:route.params.item.cardBackgroundImage}} // should be get from data.json
+                    source={{uri:route.params.item.cardbackgroundimage}} // should be get from data.json
                 >
                     <View style={styles.backButtonView}>
                         <TouchableOpacity

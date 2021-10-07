@@ -9,7 +9,7 @@ export default function ViewTwo({item,cardDim}){
 
     useEffect(()=>{
         if (item.card == 1){
-            const itemTime = countDownClock(item.endDate,item.endTime)
+            const itemTime = countDownClock(item.enddate,item.endtime)
         setTime(itemTime.timing2)
         }
     },[])
@@ -28,12 +28,12 @@ export default function ViewTwo({item,cardDim}){
     
     return(
         <View style={styles.container}>
-            <View style={[styles.downView,{backgroundColor:item.tabColor}]}>
+            <View style={[styles.downView,{backgroundColor:item.tabcolor}]}>
                 <View style={styles.downRightView}>
                     {item.card==1?
                         <View style={[{marginLeft:cardDim*0.7*0.1},styles.downRightContainer]}>
                             <View style={styles.downRightInsideView}>
-                                <Text style={styles.priceText1}>{item.price*0.8} {item.currency}</Text>
+                                <Text style={styles.priceText1}>{Math.floor(item.price*(100-item.salepercent)/100)} {item.currency}</Text>
                                 <Text style={styles.priceText2}>{item.price} {item.currency}</Text>
                             </View>
                             <View style={styles.downRightInsideView}>
@@ -53,7 +53,7 @@ export default function ViewTwo({item,cardDim}){
                 </View>
                 <View style={styles.downLeftView}>
                     <TouchableOpacity
-                        style={[styles.botton,{backgroundColor:item.buttonColor}]}
+                        style={[styles.botton,{backgroundColor:item.buttoncolor}]}
                         onPress={goToDetails}
                     >    
                         <Text style={[styles.priceText3,{textAlign:'center'}]}>

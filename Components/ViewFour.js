@@ -11,7 +11,7 @@ export default function ViewFour({item}){
 
     useEffect(()=>{
         if (item.card == 1){
-            const itemTime = countDownClock(item.endDate,item.endTime)
+            const itemTime = countDownClock(item.enddate,item.endtime)
         setTime(itemTime.timing1)
         }
     },[])
@@ -24,7 +24,7 @@ export default function ViewFour({item}){
     useEffect(()=>{
         setTimeout(()=>{
             setRedo(!redo)
-            const itemTime = countDownClock(item.endDate,item.endTime)
+            const itemTime = countDownClock(item.enddate,item.endtime)
             setTime(itemTime.timing1)
         },1000)
     },[redo])
@@ -61,13 +61,13 @@ export default function ViewFour({item}){
                 <View style={[styles.container2]}>
                     <View style={styles.insideView}>
                         <View style={styles.downLeftView}>
-                            <Text style={styles.priceText1}>{item.price*0.8} {item.currency}</Text>
+                            <Text style={styles.priceText1}>{Math.floor(item.price*(100-item.salepercent)/100)} {item.currency}</Text>
                             <Text style={styles.priceText2}>{item.price} {item.currency}</Text>
                         </View>
                     </View>
                     <View style={styles.insideView2}>
                         <TouchableOpacity
-                            style={[styles.botton,{backgroundColor:item.buttonColor}]}
+                            style={[styles.botton,{backgroundColor:item.buttoncolor}]}
                         >    
                             <Text style={[styles.priceText3,{textAlign:'center'}]}>
                                 Buy Now

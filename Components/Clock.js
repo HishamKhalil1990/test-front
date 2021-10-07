@@ -1,6 +1,6 @@
-export default function countDownClock(endDate,endTime){
-    const date = endDate; 
-    const time = endTime;
+export default function countDownClock(enddate,endtime){
+    const date = enddate; 
+    const time = endtime;
     const dateArr = date.split('/')
     const timeArr = time.split(':')
     const dateInstance = new Date

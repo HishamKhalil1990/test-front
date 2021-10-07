@@ -4,10 +4,11 @@ import { StyleSheet, TouchableOpacity, ImageBackground,Text } from "react-native
 export default function CardThree({cardDim,item}){
     return(
         <ImageBackground style={styles.container}
-            source={{uri:item.cardBackgroundImage}} // should be get from data.json
+            imageStyle={{ borderRadius: 35}}
+            source={{uri:item.cardbackgroundimage}} // should be get from data.json
         >
             <TouchableOpacity
-                style={[styles.button,{marginBottom:cardDim*0.7*0.1,borderRadius:cardDim*0.7*0.2,backgroundColor:item.buttonColor}]}
+                style={[styles.button,{marginBottom:cardDim*0.7*0.1,borderRadius:cardDim*0.7*0.2,backgroundColor:item.buttoncolor}]}
             >
                 <Text style={{fontSize:cardDim*0.7*0.15,color:'#fff',textAlign:'center'}}>Play me</Text>
             </TouchableOpacity>

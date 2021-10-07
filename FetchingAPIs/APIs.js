@@ -1,14 +1,15 @@
 import axios from "axios";
 
-const globalURL = ''
+const globalURL = 'https://test-back-media.herokuapp.com/data'
 
-export default function getData(source){
+export default async function getData(source){
 
     if (source == 'local'){
         const data = require('../public/data.json')
         return data
-    }else if(source == 'xAPI'){
-        const {data} = axios.get(globalURL)
+    }else if(source == 'API'){
+        const data = await axios.get(globalURL)
+        console.log(data.data)
         return data
     }
 };

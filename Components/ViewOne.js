@@ -15,21 +15,21 @@ export default function ViewOne({item,cardDim,screen}){
                         }
                         <Image
                             style={{height:cardDim*0.7*0.3,width:cardDim*0.7*0.3,borderRadius:cardDim*0.15*0.7}}
-                            source={{uri:item.companyLogo}} // should be get from data.json
+                            source={{uri:item.companylogo}} // should be get from data.json
                         />
                     </View>
                     <View style={{height:cardDim*0.7*0.3,width:'100%',justifyContent:'center',flexDirection:'column',marginLeft:cardDim*0.7*0.1}}>
                         <View style={screen==1? styles.textView : styles.textView2}>
                             <Text style={screen==1?styles.text1:styles.text3}>FLASH SALE</Text>
                         </View>
-                        <Text style={styles.text2}>{item.salePercent}% OFF </Text>
+                        <Text style={styles.text2}>{item.salepercent}% OFF </Text>
                     </View>
                 </View>
                 <View style={[styles.upLeftView,screen==1? styles.ulw1 : styles.ulw2]}>
                     <View style={{height:cardDim*0.7*0.7,width:cardDim*0.7*0.7,borderRadius:cardDim*0.35*0.7,backgroundColor:'#fff',marginLeft:20,justifyContent:'center',alignItems:'center'}}>
                         <Image
                             style={{height:cardDim*0.8*0.7,width:cardDim*0.8*0.7,borderRadius:cardDim*0.4*0.7}}
-                            source={{uri:item.itemImg}} // should be get from data.json
+                            source={{uri:item.itemimg}} // should be get from data.json
                         />
                     </View>
                 </View>
