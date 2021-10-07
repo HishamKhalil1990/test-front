@@ -6,7 +6,8 @@ import ViewTwo from "./ViewTwo";
 export default function CardOne({cardDim,item,screen}){
     return(
         <ImageBackground style={styles.container}
-            source={{uri:item.cardBackgroundImage}} // should be get from data.json
+            imageStyle={{ borderRadius: 35}}
+            source={{uri:item.cardbackgroundimage}} // should be get from data.json
         >
             <ViewOne  item={item} cardDim={cardDim} screen={screen}/>
             <ViewTwo  item={item} cardDim={cardDim} screen={screen}/>
